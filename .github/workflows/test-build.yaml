@@ -30,6 +30,7 @@ jobs:
       - name: TEMP Inspect current image
         run: docker inspect rancher/fluent-bit:2.2.0
 
+
       - name: Build Docker image
         run: |
           docker build `
@@ -38,3 +39,4 @@ jobs:
           -t rancher/fluent-bit:test-${{ matrix.TAG_SUFFIX }} . 
       - name: Inspect image
         run: docker inspect rancher/fluent-bit:test-${{ matrix.TAG_SUFFIX }}
+
